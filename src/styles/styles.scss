@@ -26,14 +26,16 @@ body {
 /* --- Application Styles --- */
 
 .delivery-event-filter{
-	
+
 }
 
 .delivery-event-list{
 	padding: 0;
 	.delivery-event{
-		display: flex;
-		align-items: center;
+		label{
+			display: flex;
+			align-items: center;			
+		}	
 		padding: 4px 0;
 
 		.event-color-tag{

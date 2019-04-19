@@ -16,12 +16,14 @@ class DeliveryEvent extends Component {
     render() {
         return (
         	<li className="delivery-event">
-        		<input type="checkbox" onClick={ ()=>{ 
+        	    <label title={this.props.name}>
+        			<input type="checkbox" onClick={ ()=>{ 
         			this.toggleChecked()
-        			this.props.onSelected(this.props.name, !this.state.isSelected)} 
-        		}/>
-        		<span className="event-color-tag" style={{backgroundColor:this.props.tagColor}}></span>
-        		<p className="event-name">{this.props.name}</p>
+        			this.props.onSelected(this.props.name, this.props.id, !this.state.isSelected)} 
+        			}/>
+        			<span className="event-color-tag" style={{backgroundColor:this.props.tagColor}}></span>
+        			<p className="event-name">{this.props.name}</p>
+        		</label>
         	</li>
         );
     }

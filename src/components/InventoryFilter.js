@@ -8,19 +8,25 @@ class InventoryFilter extends Component {
 
         this.state = {
         	data,
-        	selectedEvents: []
+        	selectedEvents: [],
+        	ids:[]
         }
     }
 
-    filterItems(selectedItem, isSelected){
+    filterItems(selectedItem, itemId, isSelected){
     	let itemList = this.state.selectedEvents
+    	let idList = this.state.ids
 
-    	if(isSelected)
+    	if(isSelected){
     		itemList.push(selectedItem)
-    	else
+    		idList.push(itemId)
+    	}
+    	else{
     		itemList.splice(itemList.indexOf(selectedItem),1)
+    		idList.splice(idList.indexOf(itemId),1)
+    	}
 
-    	this.setState({selectedEvents: itemList})
+    	this.setState({selectedEvents: itemList, ids:idList})
     }
 
 
@@ -32,7 +38,8 @@ class InventoryFilter extends Component {
 	        		onChange= {()=>{}}
 	        		value= {this.state.selectedEvents} 
 	        		className= "active-delivery-events" 
-	        		size="75" 
+	        		size="75"
+	        		data-curr-ids={this.state.ids.join(',')} 
 	        		placeholder="Select..."
 	        	/>
 				<ul className="delivery-event-list">
@@ -42,8 +49,8 @@ class InventoryFilter extends Component {
 							id={entry.id}
 	        				name={entry.name}
 	        				tagColor={entry.hexColor}
-	        				onSelected={ (selectedEvent, isSelected) =>{
-	        					this.filterItems(selectedEvent, isSelected)
+	        				onSelected={ (selectedEvent, itemId, isSelected) =>{
+	        					this.filterItems(selectedEvent, itemId, isSelected)
 	        				}}
 	        			/>
 					)}
