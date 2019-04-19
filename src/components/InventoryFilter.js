@@ -36,7 +36,7 @@ class InventoryFilter extends Component {
 	        	<input 
 	        		type="text" 
 	        		onChange= {()=>{}}
-	        		value= {this.state.selectedEvents} 
+	        		value= {this.state.selectedEvents.join(', ')} 
 	        		className= "active-delivery-events" 
 	        		size="75"
 	        		data-curr-ids={this.state.ids.join(',')} 
