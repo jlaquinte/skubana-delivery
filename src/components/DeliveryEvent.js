@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 
 class DeliveryEvent extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
 
         this.state = {}
     }
 
-
     render() {
         return (
-        	<h1>Delivery Event</h1>
+        	<div className="delivery-event">
+        		<input type="checkbox" />
+        		<span className="event-color-tag"></span>
+        		<p className="event-name">Address Check</p>
+        	</div>
         );
     }
 }
