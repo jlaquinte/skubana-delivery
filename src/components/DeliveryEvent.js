@@ -9,11 +9,11 @@ class DeliveryEvent extends Component {
 
     render() {
         return (
-        	<div className="delivery-event">
+        	<li className="delivery-event">
         		<input type="checkbox" />
-        		<span className="event-color-tag" style={{backgroundColor:'green'}}></span>
-        		<p className="event-name">Address Check</p>
-        	</div>
+        		<span className="event-color-tag" style={{backgroundColor:this.props.tagColor}}></span>
+        		<p className="event-name">{this.props.name}</p>
+        	</li>
         );
     }
 }
