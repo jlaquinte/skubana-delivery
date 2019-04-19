@@ -11,7 +11,7 @@ class DeliveryEvent extends Component {
         return (
         	<div className="delivery-event">
         		<input type="checkbox" />
-        		<span className="event-color-tag"></span>
+        		<span className="event-color-tag" style={{backgroundColor:'green'}}></span>
         		<p className="event-name">Address Check</p>
         	</div>
         );
