@@ -11,18 +11,20 @@ class InventoryFilter extends Component {
         }
     }
 
-
     render() {
         return (
-			<ul className="delivery-event-list">
-				{data.map(entry =>
-					<DeliveryEvent
-						key={entry.id}
-        				name={entry.name}
-        				tagColor={entry.hexColor}
-        			/>
-				)}
-			</ul>	
+        	<section className="delivery-event-filter">
+	        	<input type="text" className="active-delivery-events" size="75"/>
+				<ul className="delivery-event-list">
+					{data.map(entry =>
+						<DeliveryEvent
+							key={entry.id}
+	        				name={entry.name}
+	        				tagColor={entry.hexColor}
+	        			/>
+					)}
+				</ul>
+			</section>	
         );
     }
 }

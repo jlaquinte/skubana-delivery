@@ -25,15 +25,23 @@ body {
 
 /* --- Application Styles --- */
 
-.delivery-event{
-	display: flex;
-	align-items: center;
+.delivery-event-filter{
+	size: 500;
+}
 
-	.event-color-tag{
-		display: inline-block;
-		width: 6px;
-		height: 20px;
-		border-radius: 10px;
-		margin: 0 5px;
+.delivery-event-list{
+	padding: 0;
+	.delivery-event{
+		display: flex;
+		align-items: center;
+		padding: 4px 0;
+
+		.event-color-tag{
+			display: inline-block;
+			width: 6px;
+			height: 20px;
+			border-radius: 10px;
+			margin: 0 5px;
+		}
 	}
 }
